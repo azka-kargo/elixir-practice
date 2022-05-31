@@ -1,0 +1,12 @@
+defmodule Exproject.Repo.Migrations.CreateVehicles do
+  use Ecto.Migration
+
+  def change do
+    create table(:vehicles) do
+      add :vehicle_plate, :string
+      add :status, :boolean, default: false, null: false
+
+      timestamps()
+    end
+  end
+end

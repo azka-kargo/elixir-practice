@@ -2,6 +2,9 @@ import Config
 
 # Configure your database
 config :exproject, Exproject.Repo,
+# POSTGRES_USER: "postgres"
+#  POSTGRES_PASSWORD: "postgres"
+#   POSTGRES_DB: "personal"
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
