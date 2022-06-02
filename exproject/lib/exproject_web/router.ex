@@ -3,11 +3,11 @@ defmodule ExprojectWeb.Router do
 
   pipeline :browser do
     plug :accepts, ["html"]
-    # plug :fetch_session
-    # plug :fetch_live_flash
-    # plug :put_root_layout, {ExprojectWeb.LayoutView, :root}
-    # plug :protect_from_forgery
-    # plug :put_secure_browser_headers
+    plug :fetch_session
+    plug :fetch_live_flash
+    plug :put_root_layout, {ExprojectWeb.LayoutView, :root}
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
   end
 
   pipeline :api do
@@ -18,6 +18,13 @@ defmodule ExprojectWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/transporter_VehicleController", Transporter_VehicleController, only: [:index, :show]
+resources "/transporter", TransporterController, except: [:delete]
+resources "/vehicle", VehicleController, except: [:delete]
+resources "/document", DocumentController, except: [:delete]
+
+
+
   end
 
   # Other scopes may use custom stacks.
