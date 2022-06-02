@@ -7,7 +7,7 @@ defmodule Exproject.Repo.Migrations.CreateTransporter do
       add :phone_number, :string
       add :npwp, :string
       add :status, :string
-      add :transporter_id:string
+      add :transporter_id, :string
 
 
       timestamps()
