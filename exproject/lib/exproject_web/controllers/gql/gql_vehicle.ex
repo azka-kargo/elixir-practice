@@ -8,7 +8,9 @@ defmodule ExprojectWeb.Schema.Vehicle do
     @desc: "Get all vehicle"
     field :all_vehicle, non_null(list_of(non_null(:id))) do
       arg(:id, :string)
-      arg(:user_id, non_null(:string))
+      arg(:licensePlate, :string)
+      arg(:status, :string)
+
 
       middleware(Middleware.Authorize, Role.all())
       resolve(&TransporterResolver.all_vehicle/3)

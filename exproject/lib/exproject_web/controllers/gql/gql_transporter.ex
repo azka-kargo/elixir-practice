@@ -8,7 +8,13 @@ defmodule ExprojectWeb.Schema.Transporter do
     @desc: "Get all transporter"
     field :all_transporter, non_null(list_of(non_null(:id))) do
       arg(:id, :string)
-      arg(:user_id, non_null(:string))
+      arg(:name, non_null(:string))
+      arg(:npwp, :string)
+      arg(:phoneNumber, :integer)
+
+      arg(:status, :string)
+
+      arg(:vehicle, :vehicle)
 
       middleware(Middleware.Authorize, Role.all())
       resolve(&TransporterResolver.all_transporter/3)
