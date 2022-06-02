@@ -5,7 +5,6 @@ defmodule ExprojectWeb.Schema.TransporterResolver do
   alias ExprojectWeb.TransporterResolver
   query do
   # this is the query entry point to our app
-    @desc: "Get all transporter"
     field :all_transporter, non_null(list_of(non_null(:id))) do
       arg(:id, :string)
       arg(:user_id, non_null(:string))

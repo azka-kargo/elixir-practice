@@ -28,6 +28,7 @@ defmodule Exproject.Vehicles do
       phone_number: t.phone_number,
       npwp_number: t.npwp_number
 
+      }
     }
     Repo.all(query)
   end
