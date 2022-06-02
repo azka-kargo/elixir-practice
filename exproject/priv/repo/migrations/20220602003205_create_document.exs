@@ -7,7 +7,7 @@ defmodule Exproject.Repo.Migrations.CreateDocument do
       add :document_url, :string
       add :reference_id, :string
       add :reference_table, :string
-      add :id, :string
+      add :id, :string , primary_key:true
 
       timestamps()
     end
