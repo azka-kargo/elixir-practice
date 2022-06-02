@@ -3,9 +3,11 @@ defmodule Exproject.Repo.Migrations.CreateTransporter do
 
   def change do
     create table(:transporter) do
-      add :vehicle_plate, :string
-      add :status, :boolean, default: false, null: false
-      add :vehicle_id, references("vehicles")
+      add :name, :string
+      add :phone_number, :string
+      add :npwp, :string
+      add :status, :string
+      add :transporter_id:string
 
 
       timestamps()

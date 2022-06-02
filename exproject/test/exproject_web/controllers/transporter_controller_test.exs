@@ -6,14 +6,18 @@ defmodule ExprojectWeb.TransporterControllerTest do
   alias Exproject.Transporters.Transporter
 
   @create_attrs %{
-    status: true,
-    vehicle_plate: "some vehicle_plate"
+    name: "some name",
+    npwp: "some npwp",
+    phone_number: "some phone_number",
+    status: "some status"
   }
   @update_attrs %{
-    status: false,
-    vehicle_plate: "some updated vehicle_plate"
+    name: "some updated name",
+    npwp: "some updated npwp",
+    phone_number: "some updated phone_number",
+    status: "some updated status"
   }
-  @invalid_attrs %{status: nil, vehicle_plate: nil}
+  @invalid_attrs %{name: nil, npwp: nil, phone_number: nil, status: nil}
 
   setup %{conn: conn} do
     {:ok, conn: put_req_header(conn, "accept", "application/json")}
@@ -35,8 +39,10 @@ defmodule ExprojectWeb.TransporterControllerTest do
 
       assert %{
                "id" => ^id,
-               "status" => true,
-               "vehicle_plate" => "some vehicle_plate"
+               "name" => "some name",
+               "npwp" => "some npwp",
+               "phone_number" => "some phone_number",
+               "status" => "some status"
              } = json_response(conn, 200)["data"]
     end
 
@@ -57,8 +63,10 @@ defmodule ExprojectWeb.TransporterControllerTest do
 
       assert %{
                "id" => ^id,
-               "status" => false,
-               "vehicle_plate" => "some updated vehicle_plate"
+               "name" => "some updated name",
+               "npwp" => "some updated npwp",
+               "phone_number" => "some updated phone_number",
+               "status" => "some updated status"
              } = json_response(conn, 200)["data"]
     end
 

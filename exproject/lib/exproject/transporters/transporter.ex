@@ -3,8 +3,10 @@ defmodule Exproject.Transporters.Transporter do
   import Ecto.Changeset
 
   schema "transporter" do
-    field :status, :boolean, default: false
-    field :vehicle_plate, :string
+    field :name, :string
+    field :npwp, :string
+    field :phone_number, :string
+    field :status, :string
 
     timestamps()
   end
@@ -12,7 +14,7 @@ defmodule Exproject.Transporters.Transporter do
   @doc false
   def changeset(transporter, attrs) do
     transporter
-    |> cast(attrs, [:vehicle_plate, :status])
-    |> validate_required([:vehicle_plate, :status])
+    |> cast(attrs, [:name, :phone_number, :npwp, :status])
+    |> validate_required([:name, :phone_number, :npwp, :status])
   end
 end

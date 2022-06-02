@@ -18,4 +18,21 @@ defmodule Exproject.TransportersFixtures do
 
     transporter
   end
+
+  @doc """
+  Generate a transporter.
+  """
+  def transporter_fixture(attrs \\ %{}) do
+    {:ok, transporter} =
+      attrs
+      |> Enum.into(%{
+        name: "some name",
+        npwp: "some npwp",
+        phone_number: "some phone_number",
+        status: "some status"
+      })
+      |> Exproject.Transporters.create_transporter()
+
+    transporter
+  end
 end

@@ -13,7 +13,9 @@ defmodule ExprojectWeb.TransporterView do
   def render("transporter.json", %{transporter: transporter}) do
     %{
       id: transporter.id,
-      vehicle_plate: transporter.vehicle_plate,
+      name: transporter.name,
+      phone_number: transporter.phone_number,
+      npwp: transporter.npwp,
       status: transporter.status
     }
   end
